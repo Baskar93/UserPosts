@@ -1,0 +1,95 @@
+<div class="card">
+  <div class="card-body">
+    <h2 class="text">REGISTER</h2>
+  </div>
+</div>
+
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+          alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="registerForm">
+
+
+          <div class="divider d-flex align-items-center my-4">
+          </div>
+          <h3 class="text">{{msg}}</h3>
+          <!-- firstName input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example3" formControlName="fname" class="form-control form-control-lg"
+              placeholder="FIRST NAME" />
+            <p class="alert alert-danger"
+              *ngIf="(registerForm.get('fname').touched || registerForm.get('fname').dirty) && registerForm.get('fname').errors?.required">
+              Please enter First Name
+            </p>
+            <label class="form-label" for="form3Example3">First Name</label>
+          </div>
+          <!-- lastname input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example4" formControlName="lname" class="form-control form-control-lg"
+              placeholder="LAST NAME" />
+            <p class="alert alert-danger"
+              *ngIf="(registerForm.get('lname').touched || registerForm.get('lname').dirty) && registerForm.get('lname').errors?.required">
+              Please enter Last Name
+            </p>
+            <label class="form-label" for="form3Example4">Last Name</label>
+          </div>
+          <!-- age input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example5" formControlName="age" class="form-control form-control-lg"
+              placeholder="AGE" />
+            <p class="alert alert-danger"
+              *ngIf="(registerForm.get('age').touched || registerForm.get('age').dirty) && registerForm.get('age').errors?.pattern">
+              Please enter valid Age
+            </p>
+            <label class="form-label" for="form3Example5">Age</label>
+          </div>
+          <!-- email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form3Example6" formControlName="mail" class="form-control form-control-lg"
+              placeholder="EMAIL ID" />
+            <p class="alert alert-danger"
+              *ngIf="(registerForm.get('mail').touched || registerForm.get('mail').dirty) && registerForm.get('mail').errors?.email">
+              Please enter valid mail Id
+            </p>
+            <label class="form-label" for="form3Example6">Email address</label>
+          </div>
+          <!-- phonenumber input -->
+          <div class="form-outline mb-4">
+            <input type="number" id="form3Example7" formControlName="ph" class="form-control form-control-lg"
+              placeholder="PHONE NUMBER" />
+            <p class="alert alert-danger"
+              *ngIf="(registerForm.get('ph').touched || registerForm.get('ph').dirty) && registerForm.get('ph').errors?.pattern">
+              Please enter 10 dig Phone number
+            </p>
+            <label class="form-label" for="form3Example7">Phone Number</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="form3Example8" formControlName="passwd" class="form-control form-control-lg"
+              placeholder="PASSWORD" />
+            <p class="alert alert-danger"
+              *ngIf="(registerForm.get('passwd').touched || registerForm.get('passwd').dirty) && registerForm.get('passwd').errors?.pattern">
+              Please enter password
+            </p>
+            <label class="form-label" for="form3Example8">Password</label>
+          </div>
+
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="button" [disabled]="registerForm.invalid" (click)="doRegister()"
+              class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;"> Register </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</section>

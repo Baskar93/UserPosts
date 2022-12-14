@@ -1,0 +1,65 @@
+/* .formAlligment
+{  
+   padding: 50px;
+   width:985px; margin:0 auto 
+}
+
+.textBox
+{
+/*   
+  table-layout: fixed;
+  width: 50%; */
+/* 
+  display: table;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 35%;
+} */
+
+
+
+/* .textColor
+{
+  color: red;
+}
+
+.card
+{
+  color:chocolate;
+  
+  padding: 10px;
+  
+}
+
+.letter
+{
+
+text-align: left;
+} */ 
+
+.text
+{
+  color: brown;
+}
+
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+.text
+{
+  color: red;
+  text-align: center;
+}

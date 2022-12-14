@@ -1,0 +1,33 @@
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <a class="navbar-brand" href="/home"></a>&nbsp;&nbsp;
+    <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        </li>
+      </ul>
+    </div>
+      <ul class="navbar-nav" *ngIf="userType == 'logOut'">
+      <li><a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a></li>
+      <li><a class="nav-link" routerLink="/" routerLinkActive="active">Login</a></li>
+      <li><a class="nav-link" routerLink="/publicpost" routerLinkActive="active" >Public posts</a></li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="userType == 'login'">
+      <li><a class="nav-link" routerLink="/logged/allpost" routerLinkActive="active">All Posts</a></li>
+      <li><a class="nav-link" routerLink="/logged/newpost" routerLinkActive="active">New Post</a></li>
+      <li><a (click)="doLogout()" class="nav-link" routerLinkActive="active">Logout</a></li>
+   </ul>
+  </nav>
+
+  
+  
+  
+  
+  
+  
+  
+  
+ 

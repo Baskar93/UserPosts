@@ -1,0 +1,23 @@
+
+
+
+
+<table class="table">
+    <thead>
+      <tr >
+        <th scope="col">Tittle</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of receivedAllpostArray">
+        <!-- <ng-container *ngIf="data.selectedPost=='public'"> -->
+        <td>{{data.title}}</td>
+        <td>{{data.description}}</td>
+        <td><img src="assets/post_images/{{data.postImgPath}}" height="150" width="150"></td>
+      <!-- </ng-container> -->
+      </tr>
+    
+    </tbody>
+  </table>

@@ -1,0 +1,49 @@
+
+ <div class="card">
+  <div class="card-body">
+    <h2 class="text">LOGIN</h2>
+  </div>
+</div>
+
+ <section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+          alt="Sample image">
+      </div>
+      
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form [formGroup]="reactiveValidation">
+
+         <h2 class="text">{{msg}}</h2>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" formControlName="mail" id="form3Example3" class="form-control form-control-lg"
+              placeholder="EMAIL ID" />
+              <p class="alert alert-danger" 
+        *ngIf="(reactiveValidation.get('mail').touched || reactiveValidation.get('mail').dirty) && reactiveValidation.get('mail').errors?.email">Please enter email Id</p>
+            <label class="form-label" for="form3Example3">Email address</label>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" formControlName="passwd" id="form3Example4" class="form-control form-control-lg"
+              placeholder="PASSWORD" />
+              <p class="alert alert-danger" 
+        *ngIf="(reactiveValidation.get('passwd').touched || reactiveValidation.get('passwd').dirty) && reactiveValidation.get('passwd').errors?.required">Please enter password</p>
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="reactiveValidation.invalid" (click)="doLogin()" >  Login  </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+
+

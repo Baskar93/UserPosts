@@ -1,0 +1,37 @@
+<br>
+<h3 class="btn btn-success">Create Post</h3><br><br>
+<div class="form">
+  
+  <form [formGroup]="registerForm">
+       <!-- title -->
+       {{msg}}
+    <h3>Title</h3>
+    <input type="text" formControlName="title"><br><br>
+      <!-- textArea -->
+    <h3>Description</h3>
+    <textarea class="textarea" name="message" id="" cols="20" rows="5" placeholder="Write something here..."
+      formControlName="description"></textarea><br><br>
+      <!-- radio button -->
+      <div class="form-check" >
+        <input  class="form-check-input" type="radio" value="private" formControlName ="selectedPost" (change)="sh($event.target)"   >
+        <label class="form-check-label" >
+          Private
+        </label>
+      </div>
+      <div class="form-check">
+        <input  class="form-check-input" type="radio" value="public" formControlName ="selectedPost" (change)="ch($event.target)"  >
+        <label class="form-check-label" >
+          Public
+        </label>
+      </div><br><br>
+     <!-- imageUpload -->
+    <div>
+      <input type="file"  name="files" formControlName="selectedImage" (change)="selectImg($event)" class="form-control" />
+      <div class="btn btn-danger" *ngIf="registerForm?.get('selectedImage').errors?.required">
+        Image mandatory
+      </div>
+      <br><br>
+    </div>
+    <button class="btn btn-primary" type="button"  (click)="newPost()">submit</button>
+  </form>
+</div>
